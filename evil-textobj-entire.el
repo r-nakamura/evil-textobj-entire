@@ -37,7 +37,7 @@
   :group 'evil-textobj-entire)
 
 (evil-define-text-object evil-outer-entire (count &optional beg end type)
-  "Select inclusive range between a character by which the command is followed."
+  "Select an entire buffer excluding leading and trailing empty lines."
   (let ((start (save-excursion
                  (goto-char (point-min))
                  (point)))
@@ -47,7 +47,7 @@
     (evil-range start end)))
 
 (evil-define-text-object evil-inner-entire (count &optional beg end type)
-  "Select range between a character by which the command is followed."
+  "Select an entire buffer."
   (let ((start (save-excursion
                  (goto-char (point-min))
                  (- (re-search-forward "^.") 1)))
