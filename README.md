@@ -16,13 +16,13 @@ developed in vim-textobj-entire.
 
 # SCREENSHOTS
 
-- `vae`
+  - Demo of `vae` key
 
-![evil-textobj-entire-vae](https://github.com/r-nakamura/evil-textobj-entire/blob/master/screenshot/vae.png)
+    ![evil-textobj-entire-vae](https://github.com/r-nakamura/evil-textobj-entire/blob/master/screenshot/vae.png)
 
-- `vie`
+  - Demo of `vie` key
 
-![evil-textobj-entire-vie](https://github.com/r-nakamura/evil-textobj-entire/blob/master/screenshot/vie.png)
+    ![evil-textobj-entire-vie](https://github.com/r-nakamura/evil-textobj-entire/blob/master/screenshot/vie.png)
 
 # SEE ALSO
 
