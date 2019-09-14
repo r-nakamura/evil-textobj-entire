@@ -38,13 +38,7 @@
 
 (evil-define-text-object evil-outer-entire (count &optional beg end type)
   "Select an entire buffer excluding leading and trailing empty lines."
-  (let ((start (save-excursion
-                 (goto-char (point-min))
-                 (point)))
-        (end (save-excursion
-               (goto-char (point-max))
-               (point))))
-    (evil-range start end)))
+  (evil-range (point-min) (point-max)))
 
 (evil-define-text-object evil-inner-entire (count &optional beg end type)
   "Select an entire buffer."
