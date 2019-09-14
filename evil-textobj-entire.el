@@ -49,7 +49,7 @@
                (goto-char (point-max))
                (re-search-backward "^.")
                (goto-char (line-end-position)))))
-        (evil-range start end)))
+    (evil-range start end)))
 
 (define-key evil-outer-text-objects-map evil-textobj-entire-a-key 'evil-outer-entire)
 (define-key evil-inner-text-objects-map evil-textobj-entire-i-key 'evil-inner-entire)
