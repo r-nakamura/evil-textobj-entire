@@ -42,6 +42,8 @@
 
 (evil-define-text-object evil-inner-entire (count &optional beg end type)
   "Select an entire buffer."
+  (if (string-match "\\`\n*\\'" (buffer-substring (point-min) (point-max)))
+      (error ""))
   (let ((start (save-excursion
                  (goto-char (point-min))
                  (- (re-search-forward "^.") 1)))
