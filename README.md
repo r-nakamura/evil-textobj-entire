@@ -1,6 +1,6 @@
 # evil-textobj-entire - Evil text object for an entire buffer
 
-This package is Emacs port of [vim-textobj-entire](https://github.com/kana/vim-textobj-entire/)
+This package is Emacs port of [vim-textobj-entire](https://github.com/kana/vim-textobj-entire/).
 
 # SYNOPSIS
 
