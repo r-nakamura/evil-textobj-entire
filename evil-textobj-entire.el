@@ -37,13 +37,13 @@
   :group 'evil-textobj-entire)
 
 (evil-define-text-object evil-outer-entire (count &optional beg end type)
-  "Select an entire buffer excluding leading and trailing empty lines."
+  "Select an entire buffer."
   (unless (evil-textobj-entire--string-match "\\(.\\|\n\\)")
     (error ""))
   (evil-range (point-min) (point-max)))
 
 (evil-define-text-object evil-inner-entire (count &optional beg end type)
-  "Select an entire buffer."
+  "Select an entire buffer excluding leading and trailing empty lines."
   (if (evil-textobj-entire--string-match "\\`\n*\\'")
       (error ""))
   (let ((start (save-excursion
