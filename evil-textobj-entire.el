@@ -38,11 +38,13 @@
 
 (evil-define-text-object evil-outer-entire (count &optional beg end type)
   "Select an entire buffer excluding leading and trailing empty lines."
+  (unless (evil-textobj-entire--string-match "\\(.\\|\n\\)")
+    (error ""))
   (evil-range (point-min) (point-max)))
 
 (evil-define-text-object evil-inner-entire (count &optional beg end type)
   "Select an entire buffer."
-  (if (string-match "\\`\n*\\'" (buffer-substring (point-min) (point-max)))
+  (if (evil-textobj-entire--string-match "\\`\n*\\'")
       (error ""))
   (let ((start (save-excursion
                  (goto-char (point-min))
@@ -52,6 +54,10 @@
                (re-search-backward "^.")
                (goto-char (line-end-position)))))
     (evil-range start end)))
+
+(defun evil-textobj-entire--string-match (regexp)
+  "Return ``string-match'' with REGEXP and strings in the current buffer."
+  (string-match regexp (buffer-substring (point-min) (point-max))))
 
 (define-key evil-outer-text-objects-map evil-textobj-entire-a-key 'evil-outer-entire)
 (define-key evil-inner-text-objects-map evil-textobj-entire-i-key 'evil-inner-entire)
